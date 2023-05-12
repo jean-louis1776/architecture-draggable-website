@@ -2,9 +2,13 @@ window.onload = function () {
   setTimeout(() => {
     document.body.classList.add("loaded")
 
-    Draggable.create(".gallery", {
-      bounds: "body",
-      inertia: true,
-    })
+    if (window.matchMedia("(min-width: 992px)").matches) {
+      // If not mobile
+
+      Draggable.create(".gallery", {
+        bounds: "body",
+        inertia: true,
+      })
+    }
   }, 200)
 }
